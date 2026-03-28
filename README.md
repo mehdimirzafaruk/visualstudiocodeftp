@@ -5,12 +5,16 @@ Bu proje, Visual Studio Code için açık kaynaklı bir FTP/SFTP bağlantı ekle
 ## Özellikler
 - Workspace'e özel veya genel FTP/SFTP bağlantılarını kaydedebilme
 - Otomatik dosya güncelleme (sunucudaki değişiklikleri algılayıp yerel dosyaları güncelleme)
+- Sadece belirlenen dosyanın güncellenmesini sağlama
 - FTP ve SFTP protokollerini destekler
 - Dosya ve klasörleri uzaktan listeleme
 - Sunucudaki güncel dosyaları bilgisayara kaydedebilme
 - Dosya indirme ve yükleme
 - Dosya düzenleme ve kaydetme
 - Bağlantıyı başlatma, durdurma ve kesme özellikleri
+- Güvenli şifre saklama ve bağlantı testi
+- Bağlantı ve dosya işlemleri için detaylı loglama
+- VSCode komut paleti ile entegrasyon (bağlantı başlat/durdur, dosya güncelle, vb.)
 - Açık kaynak kodlu ve geliştirilebilir yapı
 
 ## Kurulum
