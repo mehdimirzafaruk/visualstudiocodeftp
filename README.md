@@ -1,8 +1,14 @@
+> **Durum: Plan aşaması — kaynak kod henüz yazılmadı.**
+>
+> Bu repo şu an yalnızca eklentinin hedef özellik tanımını (spesifikasyon) barındırıyor.
+> Aşağıdaki başlıklar **planlanan** kapsamdır; çalışan, kurulabilir bir sürümü tarif etmez.
+> Kaynak kod eklendiğinde bu not kaldırılacaktır.
+
 # Visual Studio Code FTP Plugin
 
-Bu proje, Visual Studio Code için açık kaynaklı bir FTP/SFTP bağlantı eklentisidir. Kullanıcıların uzak sunuculara kolayca bağlanmasını, dosya transferi yapmasını ve dosyalarını düzenlemesini sağlar.
+Bu proje, Visual Studio Code için açık kaynaklı bir FTP/SFTP bağlantı eklentisi olmayı hedefliyor. Amaç, kullanıcıların uzak sunuculara kolayca bağlanmasını, dosya transferi yapmasını ve dosyalarını düzenlemesini sağlamak.
 
-## Özellikler
+## Planlanan özellikler
 - Workspace'e özel veya genel FTP/SFTP bağlantılarını kaydedebilme
 - Otomatik dosya güncelleme (sunucudaki değişiklikleri algılayıp yerel dosyaları güncelleme)
 - Sadece belirlenen dosyanın güncellenmesini sağlama
@@ -15,13 +21,12 @@ Bu proje, Visual Studio Code için açık kaynaklı bir FTP/SFTP bağlantı ekle
 - Güvenli şifre saklama ve bağlantı testi
 - Bağlantı ve dosya işlemleri için detaylı loglama
 - VSCode komut paleti ile entegrasyon (bağlantı başlat/durdur, dosya güncelle, vb.)
-- Açık kaynak kodlu ve geliştirilebilir yapı
+- MIT lisanslı açık kaynak yapı
 
 ## Kurulum
-1. Bu repoyu klonlayın veya indirin.
-2. Visual Studio Code'da eklenti olarak yükleyin veya geliştirme ortamınızı kurun.
+Henüz dağıtılabilir bir sürüm yok. Kaynak kod tamamlandığında bu bölüm derleme ve kurulum adımlarıyla güncellenecektir.
 
-## Kullanım
+## Hedeflenen kullanım akışı
 1. Eklentiyi etkinleştirin.
 2. FTP veya SFTP sunucu bilgilerinizi girin.
 3. Bağlantıyı workspace'e özel veya genel olarak kaydedin.
