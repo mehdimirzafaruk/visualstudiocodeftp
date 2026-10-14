@@ -1,0 +1,153 @@
+{
+  "name": "vscode-ftp-plugin",
+  "displayName": "FTP / SFTP",
+  "description": "Workspace'e özel veya genel FTP/SFTP bağlantıları, uzak dosya gezgini ve kaydetme anında yükleme.",
+  "version": "0.1.0",
+  "publisher": "mehdimirzafaruk",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mehdimirzafaruk/visualstudiocodeftp.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "ftp",
+    "sftp",
+    "remote",
+    "deploy",
+    "sync"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscodeFtp.addConnection",
+        "title": "FTP: Bağlantı Ekle",
+        "icon": "$(add)"
+      },
+      {
+        "command": "vscodeFtp.editConnection",
+        "title": "FTP: Bağlantıyı Düzenle",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "vscodeFtp.deleteConnection",
+        "title": "FTP: Bağlantıyı Sil",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "vscodeFtp.testConnection",
+        "title": "FTP: Bağlantıyı Test Et"
+      },
+      {
+        "command": "vscodeFtp.connect",
+        "title": "FTP: Bağlan"
+      },
+      {
+        "command": "vscodeFtp.disconnect",
+        "title": "FTP: Bağlantıyı Kes"
+      },
+      {
+        "command": "vscodeFtp.refresh",
+        "title": "FTP: Yenile",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "vscodeFtp.uploadActiveFile",
+        "title": "FTP: Aktif Dosyayı Yükle"
+      },
+      {
+        "command": "vscodeFtp.downloadActiveFile",
+        "title": "FTP: Aktif Dosyayı İndir"
+      }
+    ],
+    "configuration": {
+      "title": "FTP / SFTP",
+      "properties": {
+        "vscodeFtp.autoUploadOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Kaydettiğiniz dosyayı otomatik olarak uzak sunucuya yükler."
+        },
+        "vscodeFtp.uploadOnSaveExclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            ".git",
+            "node_modules"
+          ],
+          "description": "Otomatik yüklemede atlanacak yol parçaları."
+        },
+        "vscodeFtp.connectionTimeout": {
+          "type": "number",
+          "default": 15000,
+          "description": "Bağlantı zaman aşımı (ms)."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vscodeFtp",
+          "title": "FTP / SFTP",
+          "icon": "assets/remote.svg"
+        }
+      ]
+    },
+    "views": {
+      "vscodeFtp": [
+        {
+          "id": "vscodeFtp.connections",
+          "name": "Bağlantılar"
+        },
+        {
+          "id": "vscodeFtp.remote",
+          "name": "Uzak Dosyalar"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "vscodeFtp.addConnection",
+          "when": "view == vscodeFtp.connections",
+          "group": "navigation"
+        },
+        {
+          "command": "vscodeFtp.refresh",
+          "when": "view == vscodeFtp.remote",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "vscodeFtp.editConnection",
+          "when": "view == vscodeFtp.connections && viewItem == connection",
+          "group": "inline"
+        },
+        {
+          "command": "vscodeFtp.deleteConnection",
+          "when": "view == vscodeFtp.connections && viewItem == connection",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "check": "node --test"
+  },
+  "dependencies": {
+    "basic-ftp": "^5.0.5",
+    "ssh2-sftp-client": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0"
+  }
+}
